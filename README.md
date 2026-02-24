@@ -36,20 +36,20 @@ The queries to the Kubescape database use Headlamps feature `Allowed namespaces`
 
 You can create custom frameworks by combining one or more controls. These frameworks are stored as a ConfigMap in the Kubernetes cluster, within the namespace where Kubescape is installed, making them reusable. Additionally, you can export the frameworks to a JSON file, which can be used with the Kubescape CLI for scanning.
 
-You can customize the compliance scan by adding an exception policy, which allows you to exclude specific namespaces, resources, or controls from the scan. These exceptions are stored in a ConfigMap within the Kubernetes cluster. You can also export them to a JSON file and use it with the Kubescape CLI `kubescape scan --exceptions /path/to/exceptions.json`. For more information, check out the Kubescape documentation on accepting risk: https://kubescape.io/docs/accepting-risk/.
+You can customize the compliance scan by adding an exception policy, which allows you to exclude specific namespaces, resources, or controls from the scan. These exceptions are stored in a ConfigMap within the Kubernetes cluster. You can also export them to a JSON file and use it with the Kubescape CLI `kubescape scan --exceptions /path/to/exceptions.json`. For more information, check out the Kubescape documentation on accepting risk: <https://kubescape.io/docs/accepting-risk/>.
 
 ## Installation
 
-#### Desktop Headlamp
+### Desktop Headlamp
 
-- Install Headlamp (https://headlamp.dev/docs/latest/installation/desktop/)
+- Install Headlamp (<https://headlamp.dev/docs/latest/installation/desktop/>)
 - Open Plugin Catalog
 - Select the KubeScape Headlamp plugin and click the install button
 - After install you may need to restart Headlamp
 
 #### In-cluster Headlamp
 
-- Install Headlamp (https://headlamp.dev/docs/latest/installation/in-cluster/)
+- Install Headlamp (<https://headlamp.dev/docs/latest/installation/in-cluster/>)
 - Deploy the container image `quay.io/kubescape/headlamp-plugin` as a sidecar container to the headlamp deployment. See [example helm values](https://github.com/kubescape/headlamp-plugin/blob/main/examples/headlamp-helm-values.yaml).
 
 ## Quick test
@@ -64,7 +64,7 @@ Install [kind](https://kind.sigs.k8s.io/docs/user/quick-start/) and create a new
 
 Install kubescape with helm:
 
-```
+```text
 helm repo add kubescape https://kubescape.github.io/helm-charts/
 helm upgrade --install kubescape kubescape/kubescape-operator -n kubescape --create-namespace --set capabilities.runtimeDetection=enable --set alertCRD.installDefault=true --set nodeAgent.config.maxLearningPeriod=10m --set capabilities.continuousScan=enable
 ```
