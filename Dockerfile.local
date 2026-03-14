@@ -3,4 +3,4 @@ FROM busybox:latest
 COPY package.json /plugins/kubescape-plugin/
 COPY dist/* /plugins/kubescape-plugin/
 
-USER 1001 
+USER 1001

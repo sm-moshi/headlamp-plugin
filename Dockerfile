@@ -2,4 +2,4 @@ FROM busybox:latest
 
 COPY kubescape-plugin /plugins/kubescape-plugin/
 
-USER 1001 
+USER 1001
